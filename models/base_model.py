@@ -1,5 +1,3 @@
-This is a test for doing github pull requests
-
 #!/usr/bin/python3
 """Base Model for AirBnB Clone"""
 
