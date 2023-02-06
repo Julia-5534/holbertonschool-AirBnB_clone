@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """do nothing when an empty line and "enter" is entered"""
-    pass
+        pass
 
 
 if __name__ == '__main__':
