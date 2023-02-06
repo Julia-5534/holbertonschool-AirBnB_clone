@@ -2,6 +2,7 @@
 
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     """class for HBNB command interpreter"""
 
@@ -19,6 +20,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """do nothing when an empty line and "enter" is entered"""
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
