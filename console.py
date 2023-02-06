@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""command line interpreter"""
 import cmd
 
 
