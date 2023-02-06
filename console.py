@@ -17,7 +17,7 @@ class HBNBCommand(cmd.Cmd):
         print()
         return True
 
-    def emptyline(self):
+    def do_emptyline(self):
         """do nothing when an empty line and "enter" is entered"""
         pass
 
