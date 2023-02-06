@@ -1,5 +1,7 @@
+#!/usr/bin/python3
+"""command line interpreter"""
+import cmd
 
-<<<<<<< HEAD
 
 class HBNBCommand(cmd.Cmd):
     """class for HBNB command interpreter"""
@@ -21,5 +23,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-=======
->>>>>>> a6e2145926ba0e49a7269bed9d7c13d9c747da3f
