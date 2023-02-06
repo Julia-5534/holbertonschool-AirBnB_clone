@@ -38,14 +38,14 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        dict_representation = self.__dict__.copy()
+        dict_representation["id"] = self.__dict__.copy()
         dict_representation["__class__"] = self.__class__.__name__
         dict_representation["created_at"] = self.created_at.isoformat()
         dict_representation["updated_at"] = self.updated_at.isoformat()
         return dict_representation
 
 
-import uuid
+"""import uuid
 from datetime import datetime
 
 class BaseModel:
@@ -89,4 +89,4 @@ class BaseModel:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
-            storage.new(self)
+            storage.new(self)"""
