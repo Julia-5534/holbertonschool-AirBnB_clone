@@ -20,9 +20,10 @@ def to_dict(self):
     return dict_base
 """
 
-
+from typing import Self
 import uuid
-from datetime import datetime
+import datetime
+from models.engine.file_storage import FileStorage
 
 class BaseModel:
     """Base Model Stuff"""
@@ -45,8 +46,9 @@ class BaseModel:
         return dict_representation
 
 
+from typing import Self
 import uuid
-from datetime import datetime
+import datetime
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -75,7 +77,10 @@ class BaseModel:
         return dict_representation
 
 
-import storage
+from typing import Self
+import uuid
+import datetime
+from models.engine.file_storage import storage
 
 class BaseModel:
     def save(self):
@@ -88,3 +93,38 @@ class BaseModel:
                 setattr(self, key, value)
         else:
             storage.new(self)
+
+
+from typing import Self
+import uuid
+import datetime
+import models
+from models.engine.file_storage import storage
+from models.base_model import BaseModel
+
+
+class BaseModel:
+    def __init__(self, *args, **kwargs):
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != 'class':
+                    setattr(self, key, value)
+        if key == 'created_at' or key == 'updated_at':
+            setattr(self, key, datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+        else:
+            self.id = uuid.uuid4().hex
+            self.created_at = datetime.datetime.now()
+            self.updated_at = datetime.datetime.now()
+
+def __str__(self):
+    return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)
+
+def save(self):
+    self.updated_at = datetime.datetime.now()
+
+def to_dict(self):
+    dict_base = dict(self.__dict__)
+    dict_base['__class__'] = self.__class__.__name__
+    dict_base['created_at'] = self.created_at.isoformat()
+    dict_base['updated_at'] = self.updated_at.isoformat()
+    return dict_base
