@@ -75,8 +75,6 @@ class BaseModel:
         return dict_representation
 
 
-"""Updates that need to be implemented in this file
-based on /models/engine/file_storage & /models/__init__.py"""
 import storage
 
 class BaseModel:
