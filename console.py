@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""cmd"""
+
 import cmd
 from models.base_model import BaseModel
 from models.user import User
