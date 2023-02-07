@@ -9,6 +9,7 @@ from models.amenity import Amenity
 from models.review import Review
 from models.city import City
 
+
 class FileStorage:
     """STORE NEW FILES"""
     __file_path = "file.json"
@@ -27,12 +28,12 @@ class FileStorage:
         """SAVE FILES"""
         with open(self.__file_path, 'w') as f:
             json.dump(self.__objects, f)
-            
+
     def save(self):
         """Serializes __objects to the Jason :P file (path: __file_path)"""
         with open(self.__file_path, mode='w', encoding='utf-8') as f:
-            bananarama = {key: obj.to_dict() for key, obj in self.__objects.items()}
-            json.dump(bananarama, f)
+            banan = {key: obj.to_dict() for key, obj in self.__objects.items()}
+            json.dump(banan, f)
 
     def reload(self):
         """RELOAD FILES"""
