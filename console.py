@@ -1,21 +1,6 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """Console for HBnB Project"""
 import cmd
-
-
-valid_class = {"BaseModel": BaseModel,
-               "User": User,
-               "State": State,
-               "City": City,
-               "Amenity": Amenity,
-               "Place": Place,
-               "Review": Review
-               }
-=======
-"""command line interpreter"""
-import cmd
->>>>>>> main
 
 
 class HBNBCommand(cmd.Cmd):
