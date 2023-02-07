@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Console for HBnB Project"""
 import cmd
 
@@ -11,6 +12,10 @@ valid_class = {"BaseModel": BaseModel,
                "Place": Place,
                "Review": Review
                }
+=======
+"""command line interpreter"""
+import cmd
+>>>>>>> main
 
 
 class HBNBCommand(cmd.Cmd):
@@ -19,7 +24,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def do_quit(self, arg):
-        """command to exit the program"""
+        """quit command to exit the program"""
         return True
 
     def do_EOF(self, arg):
