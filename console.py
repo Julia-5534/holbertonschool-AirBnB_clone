@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Console for HBnB Project"""
-"""Poop"""
 import cmd
 from models.base_model import *
 from models import storage
