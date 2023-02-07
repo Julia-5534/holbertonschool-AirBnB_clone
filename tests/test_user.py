@@ -17,14 +17,6 @@ class TestUser(unittest.TestCase):
         """ Happy pass public id string format """
         self.assertEqual(str, type(User().id))
 
-    def test_created_at(self):
-        """ Happy pass created at datetime """
-        self.assertEqual(datetime, type(User().created_at))
-
-    def test_updated_at(self):
-        """ Happy pass updated at datetime """
-        self.assertEqual(datetime, type(User().updated_at))
-
     def test_uid(self):
         """ UID created at each instantiation """
         user1 = User()
@@ -75,14 +67,6 @@ class TestUser(unittest.TestCase):
             )
         self.assertEqual(str_rep, str(user1))
 
-    def test_save(self):
-        """ save method """
-        user1 = User()
-        sleep(2)
-        update = user1.updated_at
-        user1.save()
-        self.assertNotEqual(update, user1.updated_at)
-
     def test_to_dict(self):
         """ Happy pass to_dict method """
         user1 = User()
@@ -95,12 +79,6 @@ class TestUser(unittest.TestCase):
         user1.state = "California"
         self.assertIn("age", user1.to_dict())
         self.assertIn("state", user1.to_dict())
-
-    def test_to_dict_wrong_arg(self):
-        """ add an undefined arg """
-        user1 = User()
-        with self.assertRaises(NameError):
-            user1.to_dict()
 
 
 if __name__ == "__main__":

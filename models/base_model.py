@@ -10,15 +10,15 @@ class BaseModel:
     """Base Model Stuff"""
     def __init__(self, *args, **kwargs):
         if kwargs:
-            for key, val in kwargs.items():
-                if key != "__class__":
-                    if key == "created_at" or key == "updated_at":
-                        val = datetime.strptime(val, "%Y-%m-%dT%H:%M:%S.%f")
-                    setattr(self, key, val)
+            for ky, vl in kwargs.items():
+                if ky != '__class__':
+                    setattr(self, ky, vl)
+                    if ky in ('created_at', 'updated_at'):
+                        setattr(self, ky, datetime.datetime.
+                                strptime(vl, '%Y-%m-%dT%H:%M:%S.%f'))
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = self.updated_at = datetime.datetime.now()
             models.storage.new(self)
 
     def __str__(self):

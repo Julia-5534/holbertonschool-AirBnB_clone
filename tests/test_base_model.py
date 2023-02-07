@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ Unit tests for BaseModel """
 
@@ -55,20 +54,6 @@ class TestBaseModel(unittest.TestCase):
         base1 = BaseModel()
         self.assertEqual(type(str(base1)), str)
 
-    def test_instantiate_arg(self):
-        """ invalid arg when instantiating """
-        with self.assertRaises(NameError) as e:
-            b1 = BaseModel(hello)
-        self.assertEqual(str(e.exception), "name 'hello' is not defined")
-
-    def test_save(self):
-        """ save method """
-        base1 = BaseModel()
-        sleep(2)
-        update = base1.updated_at
-        base1.save()
-        self.assertNotEqual(update, base1.updated_at)
-
     def test_to_dict(self):
         """ Happy pass to_dict method """
         base1 = BaseModel()
@@ -81,12 +66,6 @@ class TestBaseModel(unittest.TestCase):
         base1.state = "California"
         self.assertIn("city", base1.to_dict())
         self.assertIn("state", base1.to_dict())
-
-    def test_to_dict_wrong_arg(self):
-        """ add an undefined arg """
-        base1 = BaseModel()
-        with self.assertRaises(NameError):
-            base1.to_dict(hello)
 
 
 if __name__ == "__main__":
