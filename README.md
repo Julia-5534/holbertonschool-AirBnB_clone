@@ -193,24 +193,6 @@ OK
     <td> <a href ="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_console.py">test_console.py </a></td>
     </tr>
   <tr>
-    <td> <a href="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_user.py">test_user.py</a></td>
-   </tr>
-  <tr>
-    <td><a href ="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_amenity.py">test_amenity.py </a></td>
-  </tr>
-<tr>
-    <td><a href="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_city.py">test_city.py</a></td>
- </tr>
-  <tr>
-    <td><a href ="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_place.py">test_place.py</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_review.py">test_review.py</td>
-  </tr>
-  <tr>
-    <td><a href = "https://github.com/Julia-5534/holbertonschool-AirBnB_clone/tree/main/tests/test_engine">tests/test_file_storage.py </a></td>
-    <td><a href ="https://github.com/Julia-5534/holbertonschool-AirBnB_clone/blob/main/tests/test_engine/test_file_storage.py">test_file storage.py</a></td>
-  </tr>
 </tbody>
 </table>
  

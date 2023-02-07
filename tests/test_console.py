@@ -1,6 +1,6 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 """
-unittest for the BaseModel class
+Unit Tests For BaseModel Class
 """
 
 
@@ -8,6 +8,7 @@ import unittest
 import uuid
 from datetime import datetime
 from models.base_model import BaseModel
+
 
 class TestBaseModel(unittest.TestCase):
     """TASK 1 UNIT TESTS"""
