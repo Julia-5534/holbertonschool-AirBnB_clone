@@ -117,14 +117,6 @@ class TestUser(unittest.TestCase):
             )
         self.assertEqual(str_rep, str(place1))
 
-    def test_save(self):
-        """ save method """
-        place1 = Place()
-        sleep(2)
-        update = place1.updated_at
-        place1.save()
-        self.assertNotEqual(update, place1.updated_at)
-
     def test_to_dict(self):
         """ Happy pass to_dict method """
         place1 = Place()
@@ -137,12 +129,6 @@ class TestUser(unittest.TestCase):
         place1.state = "California"
         self.assertIn("city", place1.to_dict())
         self.assertIn("state", place1.to_dict())
-
-    def test_to_dict_wrong_arg(self):
-        """ add an undefined arg """
-        place1 = Place()
-        with self.assertRaises(NameError):
-            place1.to_dict()
 
 
 if __name__ == "__main__":

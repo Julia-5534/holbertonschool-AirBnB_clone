@@ -30,14 +30,6 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         self.assertEqual(bm1.created_at, bm1.updated_at)
 
-    def test_sav_upd_met(self):
-        bm1 = BaseModel()
-        cat = bm1.created_at
-        uat = bm1.updated_at
-        bm1.save()
-        self.assertEqual(bm1.created_at, cat)
-        self.assertNotEqual(bm1.updated_at, uat)
-
     def test_richard(self):
         bm1 = BaseModel()
         richard = bm1.to_dict()

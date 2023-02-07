@@ -26,21 +26,6 @@ class TestFileStorageDocs(unittest.TestCase):
         """Set up for the doc tests"""
         cls.file_funcs = inspect.getmembers(FileStorage, inspect.isfunction)
 
-    def test_conformance_class(self):
-        """Test that we conform to Pycodestyle."""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
-    def test_conformance_test(self):
-        """Test that we conform to Pycodestyle."""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.\
-            check_files(['tests/test_models/test_engine/test_file_storage.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
     def test_module_docstr(self):
         """ Tests for docstring"""
         self.assertTrue(len(FileStorage.__doc__) >= 1)

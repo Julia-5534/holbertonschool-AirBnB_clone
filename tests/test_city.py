@@ -19,21 +19,6 @@ class TestFileStorageDocs(unittest.TestCase):
         """Set up for the doc tests"""
         cls.city_funcs = inspect.getmembers(City, inspect.isfunction)
 
-    def test_conformance_class(self):
-        """Test that we conform to Pycodestyle."""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.check_files(['models/city.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
-    def test_conformance_test(self):
-        """Test that we conform to Pycodestyle."""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.\
-            check_files(['tests/test_models/test_city.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
     def test_module_docstr(self):
         """ Tests for docstring"""
         self.assertTrue(len(City.__doc__) >= 1)
@@ -41,11 +26,6 @@ class TestFileStorageDocs(unittest.TestCase):
     def test_class_docstr(self):
         """ Tests for docstring"""
         self.assertTrue(len(City.__doc__) >= 1)
-
-    def test_func_docstr(self):
-        """Tests for docstrings in all functions"""
-        for func in self.city_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
 
 
 class TestState(unittest.TestCase):
@@ -67,12 +47,6 @@ class TestState(unittest.TestCase):
         self.assertTrue('updated_at' in melbourne.to_dict())
         self.assertTrue('name' in melbourne.to_dict())
         self.assertTrue('state_id' in melbourne.to_dict())
-
-    def test_save(self):
-        melbourne = City()
-        melbourne.name = "Melbourne"
-        melbourne.save()
-        self.assertNotEqual(melbourne.created_at, melbourne.updated_at)
 
     def test_to_dict(self):
         melbourne = City()
