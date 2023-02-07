@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Console for HBnB Project"""
 import cmd
+from models.base_model import *
 
 
 class HBNBCommand(cmd.Cmd):
