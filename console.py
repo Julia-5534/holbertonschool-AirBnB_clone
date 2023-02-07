@@ -1,13 +1,8 @@
+#!/usr/bin/python3
+"""Console for HBnB Project"""
 import cmd
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
-from models.engine.file_storage import FileStorage
-from models import storage
+
+
 valid_class = {"BaseModel": BaseModel,
                "User": User,
                "State": State,
@@ -31,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
         """EOF command to exit the program"""
         return True
 
-    def do_emptyline(self):
+    def emptyline(self):
         """do nothing when an empty line and "enter" is entered"""
         pass
 
