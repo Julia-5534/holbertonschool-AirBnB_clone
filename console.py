@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""doc goes here"""
+"""command line interpreter"""
 import cmd
 
 
@@ -9,19 +9,17 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def do_quit(self, arg):
-        """command to exit the program"""
+        """quit command to exit the program"""
         return True
 
     def do_EOF(self, arg):
         """EOF command to exit the program"""
-        print()
         return True
 
-    def do_emptyline(self):
+    def emptyline(self):
         """do nothing when an empty line and "enter" is entered"""
         pass
 
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-    
