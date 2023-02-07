@@ -39,21 +39,16 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        dict_representation["id"] = self.__dict__.copy()
+        dict_representation["id"] = dict(self.__dict__)
         dict_representation["__class__"] = self.__class__.__name__
         dict_representation["created_at"] = self.created_at.isoformat()
         dict_representation["updated_at"] = self.updated_at.isoformat()
         return dict_representation
 
 
-<<<<<<< HEAD
 from typing import Self
 import uuid
 import datetime
-=======
-"""import uuid
-from datetime import datetime
->>>>>>> 8323d89471d216eab973a0af770d1fcc5390b280
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -97,7 +92,6 @@ class BaseModel:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
-<<<<<<< HEAD
             storage.new(self)
 
 
@@ -128,12 +122,12 @@ def __str__(self):
 def save(self):
     self.updated_at = datetime.datetime.now()
 
-def to_dict(self):
-    dict_base = dict(self.__dict__)
-    dict_base['__class__'] = self.__class__.__name__
-    dict_base['created_at'] = self.created_at.isoformat()
-    dict_base['updated_at'] = self.updated_at.isoformat()
-    return dict_base
-=======
-            storage.new(self)"""
->>>>>>> 8323d89471d216eab973a0af770d1fcc5390b280
+ def to_dict(self):
+        """dict_base"""
+        dict_base = self.__dict__.copy()
+        dict_base["__class__"] = self.__class__.__name__
+        dict_base["created at"] = self.created_at.isoformat()
+        dict_base["updated at"] = self.updated_at.isoformat()
+        dict_base.pop("created_at", None)
+        dict_base.pop("updated_at", None)
+        return dict_base
