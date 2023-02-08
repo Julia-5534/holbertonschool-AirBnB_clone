@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """USER MODULE TESTS"""
 import unittest
-import models
-import os
 from datetime import datetime
 from models.user import User
 

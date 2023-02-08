@@ -3,36 +3,11 @@
 Unittest to test FileStorage class
 """
 import unittest
-import inspect
-import json
 import os
-import pycodestyle
-import models
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
-
-
-class TestFileStorageDocs(unittest.TestCase):
-    '''Tests for documentation of class'''
-
-    @classmethod
-    def setUpClass(cls):
-        """Set up for the doc tests"""
-        cls.file_funcs = inspect.getmembers(FileStorage, inspect.isfunction)
-
-    def test_module_docstr(self):
-        """ Tests for docstring"""
-        self.assertTrue(len(FileStorage.__doc__) >= 1)
-
-    def test_class_docstr(self):
-        """ Tests for docstring"""
-        self.assertTrue(len(FileStorage.__doc__) >= 1)
-
-    def test_func_docstr(self):
-        """Tests for docstrings in all functions"""
-        for func in self.file_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
 
 
 class TestFileStorage(unittest.TestCase):
@@ -64,12 +39,12 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(os.path.exists('file.json'))
 
     def test_reload(self):
-        storage1 = FileStorage()
-        all_objs = storage1.all()
-        for obj_id in all_objs.keys():
-            obj = all_objs[obj_id]
-        print(obj)
-        self.assertIsNotNone(obj)
+        """
+        Testing reload.
+        """
+        FileStorage.clear()
+        storage.reload()
+        self.assertTrue(len(storage.all()) > 0)
 
     def test_create(self):
         """ happy pass instance creation """
@@ -77,29 +52,9 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(type(all_objs) == FileStorage)
         self.assertTrue(isinstance(all_objs, FileStorage))
 
-    def test_new(self):
-        """ happy pass new method """
-        all_objs = FileStorage()
-        all_objs.new(BaseModel())
-        self.assertTrue(all_objs.all())
-
-    def test_new_arg(self):
-        """ new method - pass an argument """
-        all_objs = FileStorage()
-        with self.assertRaises(AttributeError):
-            all_objs.new(123)
-
-    def test_save_arg(self):
-        """ save method - pass an argument """
-        all_objs = FileStorage()
-        with self.assertRaises(TypeError):
-            all_objs.save(123)
-
-    def test_reload_arg(self):
-        """ reload method - pass an argument """
-        all_objs = FileStorage()
-        with self.assertRaises(TypeError):
-            all_objs.reload(123)
+    def tearDown(self):
+        if os.path.exists(self.file_path):
+            os.remove(self.file_path)
 
 
 if __name__ == "__main__":

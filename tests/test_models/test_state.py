@@ -4,10 +4,6 @@ Unittest to test state class
 """
 import unittest
 import inspect
-import json
-import os
-import pycodestyle
-import models
 from models.state import State
 
 
