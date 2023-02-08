@@ -2,6 +2,7 @@
 """ Unit tests for class User """
 import unittest
 import os
+import models
 from datetime import datetime
 from models.user import User
 

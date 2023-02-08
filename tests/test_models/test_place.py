@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Unit tests for class Place """
 import unittest
+import models
 from models.place import Place
 from datetime import datetime
 from time import sleep
