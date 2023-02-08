@@ -7,6 +7,7 @@ import inspect
 import json
 import os
 import pycodestyle
+import models
 from models.base_model import BaseModel
 from models.city import City
 
