@@ -26,8 +26,8 @@ class BaseModel:
         return "[{}] ({}) {}".format(booboo, self.id, self.__dict__)
 
     def save(self):
-        self.updated_at = datetime.now()
-        models.storage.save(self)
+        self.updated_at = datetime.datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         dict_base = self.__dict__.copy()

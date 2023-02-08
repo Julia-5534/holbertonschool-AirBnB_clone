@@ -6,7 +6,6 @@ import unittest
 import inspect
 import datetime
 import os
-from models.base_model import BaseModel
 import models
 from models.review import Review
 
