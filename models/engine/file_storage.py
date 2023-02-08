@@ -38,12 +38,13 @@ class FileStorage:
 
     def reload(self):
         """RELOAD FILES"""
+        BANANAPANTS = {}
+        filename = FileStorage.file_path
         try:
-            with open(self.__file_path, encoding='utf-8') as f:
+            with open(filename, encoding='utf-8') as f:
                 BANANAPANTS = json.load(f)
                 for key, value in BANANAPANTS.items():
-                    obj = eval(value['__class__'])(**value)
-                    self.__objects[key] = obj
-
+                    FileStorage.objects[key] = eval(
+                        value['class'])(**value)
         except FileNotFoundError:
             pass
