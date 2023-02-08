@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ Unit tests for class User """
 import unittest
-from models.user import User
+import os
 from datetime import datetime
-from time import sleep
+from models.user import User
 
 
 class TestUser(unittest.TestCase):

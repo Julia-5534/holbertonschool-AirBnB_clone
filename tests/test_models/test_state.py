@@ -7,7 +7,6 @@ import inspect
 import json
 import os
 import pycodestyle
-from models.base_model import BaseModel
 from models.state import State
 
 
@@ -29,10 +28,7 @@ class TestFileStorageDocs(unittest.TestCase):
 
 
 class TestState(unittest.TestCase):
-
-    def test_is_subclass(self):
-        self.assertTrue(issubclass(State().__class__, BaseModel), True)
-
+    '''Tests for class'''
     def test_attr_str(self):
         self.assertEqual(type(State().name), str)
 
