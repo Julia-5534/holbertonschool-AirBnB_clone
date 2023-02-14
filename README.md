@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img alt="aitBnB" src="https://cdn.icon-icons.com/icons2/836/PNG/512/Airbnb_icon-icons.com_66791.png" height="30"/> AirBnB clone - The console
+	<img alt="aitBnB" src="https://cdn.icon-icons.com/icons2/836/PNG/512/Airbnb_icon-icons.com_66791.png" height="30"/> AirBnB Clone - The Console
 </h1>
 <p align="center">
 	<b><i>HOLBERTON SCHOOL AirBnB Clone - The Console</i></b><br>
@@ -19,7 +19,7 @@
 
 ##   AirBnB Clone - The Console:
 
-In our Holberton school group project pair programing we work on making a `AirBnB Clone The-Console 0.1`
+Holberton School Cohort 19 Group Project: `AirBnB Clone The-Console 0.1`
 
 ## 📖 Description: 
  
