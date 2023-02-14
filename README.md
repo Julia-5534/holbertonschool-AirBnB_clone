@@ -220,3 +220,5 @@ OK
 * [Julia Bullard](https://github.com/Julia-5534)
 
 This projected was initiated on 02/08/2023
+		
+For more information on this repository and project: https://my.visme.co/view/01nnqqn6-holberton-school-c19-airbnb-clone-project 
